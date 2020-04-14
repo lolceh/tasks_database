@@ -1,4 +1,4 @@
-USE Arctur;
+USE Tasks;
 
 /*Vstavi osebe*/
 INSERT INTO Oseba (`Ime`, `Priimek`) 

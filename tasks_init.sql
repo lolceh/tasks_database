@@ -1,6 +1,6 @@
-DROP DATABASE IF EXISTS Arctur;
-CREATE DATABASE Arctur;
-USE Arctur;
+DROP DATABASE IF EXISTS Tasks;
+CREATE DATABASE Tasks;
+USE Tasks;
 
 CREATE TABLE Oseba (
     id_Oseba int NOT NULL PRIMARY KEY AUTO_INCREMENT,
@@ -35,7 +35,7 @@ CREATE TABLE Zadolzitev_Ure (
     Opravljene_ure TIME NOT NULL,
     fk_Zadolzitev int,
     fk_Oseba int,
-    CONSTRAINT fk_Zadolzitev_Ure_Zadolzitev FOREIGN KEY (fk_Zadolzitev) REFERENCES Zadolzitev(id_Zadolzitev) ON DELETE SET NULL ON UPDATE CASCADE,
+    CONSTRAINT fk_Zadolzitev_Ure_Zadolzitev FOREIGN KEY (fk_Zadolzitev) REFERENCES Zadolzitev(id_Zadolzitev) ON DELETE CASCADE ON UPDATE CASCADE,
     CONSTRAINT fk_Zadolzitev_Ure_Oseba FOREIGN KEY (fk_Oseba) REFERENCES Oseba(id_Oseba) ON DELETE SET NULL ON UPDATE CASCADE
     );
  
@@ -74,7 +74,7 @@ END; //
 DELIMITER ;
 
 
-USE `Arctur`;
+USE `Tasks`;
 CREATE  OR REPLACE VIEW `Vsi_Podatki` AS
 SELECT *	
     FROM(

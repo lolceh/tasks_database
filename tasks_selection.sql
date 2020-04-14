@@ -1,4 +1,4 @@
- USE Arctur;
+ USE Tasks;
  /*Izpis vseh zadolzitev in dodeljenih ter opravljenih ur z zadolzenimi*/
 SELECT *	
     FROM(
